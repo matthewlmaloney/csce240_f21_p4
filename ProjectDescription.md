@@ -31,8 +31,12 @@ You will complete the following functions in the `main-sub1.cpp`:
     apple
     banana
    ```
-  Then findMinHamming(data, "apply") would return index 1 (the index of apple).
+   - Then findMinHamming(data, "apply") would return index 1 (the index of apple).
 3. `vector<vector<int>> calculateHammingAll(vector<string>)`
 ## Subtask 2 - Word Search
+A popular diversion in the United States, "word find" (or "word search") puzzles ask the player to find each of a given set of words in a square table filled with single letters. A word can read horizontally (left or right), vertically (up or down), or along a 45 degree diagonal (in any of the four directions) formed by consecutively adjacent cells of the table; it may wrap around the table’s boundaries, but it must read in the same direction with no zigzagging. The same cell of the table may be used in different words, but, in a given word, the same cell may be used no more than once. 
+
+Write a program for solving this puzzle. Your program will take in a puzzle and then a word and return the start and end position of the word in the puzzle if found and an error message if not found.
 
 ## Subtask 3 - Exhaustive Assignment of Jobs
+Write an exhaustive search algorithm to solve the assignment problem.
