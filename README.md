@@ -1,4 +1,4 @@
-# CSCE 240 Fall 2021 Project 4 (60 Points) Due 11/16 at Midnight
+# CSCE 240 Fall 2021 Project 4 (60 Points)
 
-See 
+See https://github.com/coleca24/csce240_f21_p4/blob/main/ProjectDescription.md for description.
 
