@@ -1,5 +1,5 @@
 # CSCE 240 Project 4 (60 pts) Due 11/16 at Midnight
-For this assignment there will be 3 subtasks. You will choose 2 out of 3 to complete for credit and the third (if you choose to complete it will be extra credit). Each task is worth 30 points if it is contributing to the overall 60 (ie. one of the 2 that you chose) or 15 if it is the one you are attempting for extra credit. In each of the subtasks you will complete the task using a `std::vector`. 
+For this assignment there will be 2 subtasks (30 points each). In each of the subtasks you will complete the task using a `std::vector`. 
 
 ## Subtask 1 - Hamming Distance
 The Hamming distance between two strings of equal length can be defined as the number of positions at which the corresponding symbols are different. 
@@ -33,10 +33,80 @@ You will complete the following functions in the `main-sub1.cpp`:
    ```
    - Then findMinHamming(data, "apply") would return index 1 (the index of apple).
 3. `vector<vector<int>> calculateHammingAll(vector<string>)`
+
+### Compiling and Running Subtask 1
+Compiling: 
+```
+g++ main-sub1.cpp -o sub1
+```
+Runnning:
+```
+./sub1 data.txt
+```
 ## Subtask 2 - Word Search Solver
 A popular diversion in the United States, "word find" (or "word search") puzzles ask the player to find each of a given set of words in a square table filled with single letters. A word can read horizontally (left or right), vertically (up or down), or along a 45 degree diagonal (in any of the four directions) formed by consecutively adjacent cells of the table; it may wrap around the table’s boundaries, but it must read in the same direction with no zigzagging. The same cell of the table may be used in different words, but, in a given word, the same cell may be used no more than once. 
 
-Write a program for solving this puzzle. Your program will take in a puzzle and then a word and return the start and end position of the word in the puzzle if found and an error message if not found.
+Your program will take in a puzzle and a list of words and return the start and end position of each word in the puzzle if found and an error message if not found.
 
-## Subtask 3 - Grade Calculator
-This subtask will operate on two different vectors. One vector (std::vector<string) will hold the names of the students and one vector (std::vector<double>) that will hold the grades for each student.
+You will complete the following functions in the `main-sub2.cpp` file: 
+1. `void readPuzzle(vector<vector<char>> &puzzle, string filename)`: 
+   - Reads data from `filename` (note that `filename` denotes the name of an actual file that you will send on the command line)
+    - The data in this file is in the form: 
+    ```
+    A  D  D  T
+    Q  I  L  L
+    R  D  O  O
+    ```
+    - Each charcter in the file should be pushed to the vector `puzzle` passed into the function. 
+2. `void readWords(vector<string> &words, string filename)`:
+   - Reads data from `filename` (note that `filename` denotes the name of an actual file that you will send on the command line)
+    - The data in this file is in the form: 
+    ```
+    OLD
+    ADD
+    DOG
+    DID
+    ARM
+    ```
+    - Each string in the file should be pushed to the vector `words` passed into the function. 
+3. `void printLocation(string word, const vector<int> &start, const vector<int> &end, bool found)`
+   - Should print out the starting and end location of the `word` only if `found` is true. 
+      - The format for this should be "Word `word` found at (`start[0]`, `start[1]`) -> (`end[0]`, `end[1]`) where `word`, `start` and `end` come from the passed parameters (these will be filled in the function that follows!)
+   - If `found` is false, it should print out: "Word `word` not found" (Examples below)
+   - Example puzzle and word list followed by output
+    ```
+    A  D  D  T
+    Q  I  L  L
+    R  D  O  O
+    ```
+    word list
+     ```
+    OLD
+    ADD
+    DOG
+    ```
+    output:
+    ```
+    Word OLD found at (3, 3) -> (0, 1)
+    Word ADD found at (0, 0) -> (0, 2)
+    Word DOG not found
+    ```
+4. `bool findWord(const vector<vector<char>> & puzzle, string word, vector<int> &start, vector<int> &end)`
+   - Returns true if `word` is found and stores the start location (row, column of the first character) and the end location (row, column of the last character) in the `start` and `end` vectors. 
+   - Returns false if `word` is not found 
+
+The `main()` function will call these functions in the following order: 
+1. Call to your `readPuzzle` function ( I have already set up the command line arguments to read in the puzzle file name )
+2. Call to your `readWords` function ( I have already set up the command line arguments to read in the words file name )
+3. Loop through your `words` vector
+  - Each time through, a call to your `findWord` and your `printLocation` function
+
+### Compiling and Running Subtask 2
+Compiling: 
+```
+g++ main-sub2.cpp -o sub2
+```
+Runnning:
+```
+./sub2 puzzle.txt words.txt
+```
