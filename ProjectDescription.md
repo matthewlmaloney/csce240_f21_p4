@@ -2,7 +2,7 @@
 For this assignment there will be 2 subtasks (30 points each). In each of the subtasks you will complete the task using a `std::vector`. 
 
 ## Subtask 1 - Hamming Distance
-The Hamming distance between two strings of equal length can be defined as the number of positions at which the corresponding symbols are different. 
+The Hamming distance between two strings can be defined as the number of positions at which the corresponding symbols are different. 
 
 For example:
 
@@ -159,7 +159,7 @@ You will complete the following functions in the `main-sub2.cpp` file:
     ```
     output:
     ```
-    Word OLD found at (2, 3) -> (0, 1)
+    Word OLD found at (2, 2) -> (0, 2)
     ```
 6. `bool findWord(const vector<vector<char>> & puzzle, string word, vector<int> &start, vector<int> &end)`
    - Returns true if `word` is found and stores the start location (row, column of the first character) and the end location (row, column of the last character) in the `start` and `end` vectors. 
@@ -188,7 +188,7 @@ DOG
 ```
 output:
 ```
-Word OLD found at (3, 3) -> (0, 1)
+Word OLD found at (2, 2) -> (0, 2)
 Word ADD found at (0, 0) -> (0, 2)
 Word DOG not found
 ```
