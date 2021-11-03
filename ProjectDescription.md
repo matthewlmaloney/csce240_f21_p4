@@ -159,7 +159,7 @@ You will complete the following functions in the `main-sub2.cpp` file:
     ```
     output:
     ```
-    Word OLD found at (3, 2) -> (0, 1)
+    Word OLD found at (2, 3) -> (0, 1)
     ```
 6. `bool findWord(const vector<vector<char>> & puzzle, string word, vector<int> &start, vector<int> &end)`
    - Returns true if `word` is found and stores the start location (row, column of the first character) and the end location (row, column of the last character) in the `start` and `end` vectors. 
