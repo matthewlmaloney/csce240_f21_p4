@@ -22,6 +22,7 @@ int main(int argc, char **argv) {
   }
   filename = argv[1];
   readData(data, filename);
+  printData(data);
   for (auto line : data) {
     vector<int> ret;
     ret = findMinHamming(data, line);
