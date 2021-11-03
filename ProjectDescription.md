@@ -23,7 +23,14 @@ You will complete the following functions in the `main-sub1.cpp`:
     ...
     ```
     - Each line in the file should be pushed to the vector `data` passed into the function. 
-2. `vector<int> findMinHamming(const vector<string> & data, string test)`
+2. `void printData(const vector<string> &data)`
+   - Prints the data vector in the following form (one string per line): 
+   ```
+   value 1 
+   value 2
+   value 3
+   ```
+4. `vector<int> findMinHamming(const vector<string> & data, string test)`
    - Returns the index of the element in `data` with the smallest hamming distance to the string `test` as well as the distance
       - Notice that the return is a vector of int. Each vector should have the index of the minimum string as the first element and the hamming distance as the second. 
    - For example, if data contains the following strings:
@@ -33,6 +40,8 @@ You will complete the following functions in the `main-sub1.cpp`:
     banana
    ```
    - Then findMinHamming(data, "apply!") would return a vector holding (1, 2) where 1 indicates the index of the match ("apple") and 2 indicates the hamming distance (2)
+   - **If there is a tie, it should just return the first minimum in the data vector**
+   - **You should ignore the hamming distance to the word itself**
 3. `void printMinDistance(const vector<string> &data, string word, const vector<int> min)`
    - Should print out in the form: "The minimum hamming distance for `word` is `min[1]` (matching word: `data[min[0]]`)"
    - Example data vector, word and output
@@ -53,9 +62,28 @@ You will complete the following functions in the `main-sub1.cpp`:
 
 The `main()` function will call these functions in the following order: 
 1. Call to your `readData` function ( I have already set up the command line arguments to read in the data file name )
-2. Loop through your `data` vector
-  - Each time through, a call to your `findMinHamming` and your `printMinHamming` function
-
+2. Call to your `printData` function
+3. Loop through your `data` vector
+   - Each time through, a call to your `findMinHamming` and your `printMinHamming` function
+Example output: 
+data
+```
+apple
+banana
+bananas
+apply
+grape
+apples
+```
+output:
+```
+The minimum hamming distance for apple is 1 (matching word: apply)
+The minimum hamming distance for banana is 1 (matching word: bananas)
+The minimum hamming distance for bananas is 1 (matching word: banana)
+The minimum hamming distance for apply is 1 (matching word: apple)
+The minimum hamming distance for grape is 4 (matching word: apple)
+The minimum hamming distance for apples is 1 (matching word: apple)
+```
 ### Compiling and Running Subtask 1
 Compiling: 
 ```
@@ -91,7 +119,23 @@ You will complete the following functions in the `main-sub2.cpp` file:
     ARM
     ```
     - Each string in the file should be pushed to the vector `words` passed into the function. 
-3. `void printLocation(string word, const vector<int> &start, const vector<int> &end, bool found)`
+3. `void printPuzzle(const vector<vector<char>> &puzzle)`
+   - Prints out the puzzle in the following format:
+    ```
+    A  D  D  T
+    Q  I  L  L
+    R  D  O  O
+    ```
+4. `void printWords(const vector<string> &words)`
+   - Prints out the words in the following format:
+    ```
+    OLD
+    ADD
+    DOG
+    DID
+    ARM
+    ```
+5. `void printLocation(string word, const vector<int> &start, const vector<int> &end, bool found)`
    - Should print out the starting and end location of the `word` only if `found` is true. 
       - The format for this should be "Word `word` found at (`start[0]`, `start[1]`) -> (`end[0]`, `end[1]`) where `word`, `start` and `end` come from the passed parameters (these will be filled in the function that follows!)
    - If `found` is false, it should print out: "Word `word` not found" (Examples below)
@@ -109,17 +153,20 @@ You will complete the following functions in the `main-sub2.cpp` file:
     ```
     Word OLD found at (3, 3) -> (0, 1)
     ```
-4. `bool findWord(const vector<vector<char>> & puzzle, string word, vector<int> &start, vector<int> &end)`
+6. `bool findWord(const vector<vector<char>> & puzzle, string word, vector<int> &start, vector<int> &end)`
    - Returns true if `word` is found and stores the start location (row, column of the first character) and the end location (row, column of the last character) in the `start` and `end` vectors. 
    - Returns false if `word` is not found 
 
 The `main()` function will call these functions in the following order: 
 1. Call to your `readPuzzle` function ( I have already set up the command line arguments to read in the puzzle file name )
 2. Call to your `readWords` function ( I have already set up the command line arguments to read in the words file name )
-3. Loop through your `words` vector
+3. Call to your `printPuzzle` function.
+4. Call to your `printWords` function. 
+5. Loop through your `words` vector
   - Each time through, a call to your `findWord` and your `printLocation` function
 
 Example output: 
+puzzle
 ```
 A  D  D  T
 Q  I  L  L
