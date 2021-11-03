@@ -93,6 +93,14 @@ Runnning:
 ```
 ./sub1 data.txt
 ```
+
+### Grading for Subtask 1 (25 points)
+- 5 points  : void readData(vector<string> &data, string filename);
+- 5 points  : void printData(const vector<string> &data);
+- 10 points : vector<int> findMinHamming(const vector<string> & data, string test);
+- 5 points  : void printMinDistance(const vector<string> &data, string word,
+                      const vector<int> min);
+
 ## Subtask 2 - Word Search Solver
 A popular diversion in the United States, "word find" (or "word search") puzzles ask the player to find each of a given set of words in a table filled with single letters. A word can read horizontally (left or right), vertically (up or down), or along a 45 degree diagonal (in any of the four directions) formed by consecutively adjacent cells of the table; it may wrap around the table’s boundaries, but it must read in the same direction with no zigzagging. The same cell of the table may be used in different words, but, in a given word, the same cell may be used no more than once. 
 
@@ -194,3 +202,13 @@ Runnning:
 ```
 ./sub2 puzzle.txt words.txt
 ```
+
+### Grading for Subtask 2 (35 points)
+- 7 points - void readPuzzle(vector<vector<char>> &puzzle, string filename);
+- 6 points - void readWords(vector<string> &words, string filename);
+- 4 points - void printPuzzle(const vector<vector<char>> &puzzle);
+- 4 points - void printWords(const vector<string> &words);
+- 7 points - void printLocation(string word, const vector<int> &start,
+                   const vector<int> &end, bool found);
+- 7 points - bool findWord(const vector<vector<char>> & puzzle, string word,
+              vector<int> &start, vector<int> &end);
