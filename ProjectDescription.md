@@ -23,16 +23,38 @@ You will complete the following functions in the `main-sub1.cpp`:
     ...
     ```
     - Each line in the file should be pushed to the vector `data` passed into the function. 
-2. `int findMinHamming(const vector<string> & data, string test)`
-   - Returns the index of the element in `data` with the smallest hamming distance to the string `test`
+2. `vector<int> findMinHamming(const vector<string> & data, string test)`
+   - Returns the index of the element in `data` with the smallest hamming distance to the string `test` as well as the distance
+      - Notice that the return is a vector of int. Each vector should have the index of the minimum string as the first element and the hamming distance as the second. 
    - For example, if data contains the following strings:
    ```
     cherry
     apple
     banana
    ```
-   - Then findMinHamming(data, "apply") would return index 1 (the index of apple).
-3. `vector<vector<int>> calculateHammingAll(vector<string>)`
+   - Then findMinHamming(data, "apply!") would return a vector holding (1, 2) where 1 indicates the index of the match ("apple") and 2 indicates the hamming distance (2)
+3. `void printMinDistance(const vector<string> &data, string word, const vector<int> min)`
+   - Should print out in the form: "The minimum hamming distance for `word` is `min[1]` (matching word: `data[min[0]]`)"
+   - Example data vector, word and output
+   data
+   ```
+   cherry
+   apple
+   banana
+   ```
+   word
+   ```
+   cherries
+   ```
+   output
+   ```
+   The minimum hamming distance for cherries is 3 (matching word: cherry)
+   ```
+
+The `main()` function will call these functions in the following order: 
+1. Call to your `readData` function ( I have already set up the command line arguments to read in the data file name )
+2. Loop through your `data` vector
+  - Each time through, a call to your `findMinHamming` and your `printMinHamming` function
 
 ### Compiling and Running Subtask 1
 Compiling: 
@@ -44,7 +66,7 @@ Runnning:
 ./sub1 data.txt
 ```
 ## Subtask 2 - Word Search Solver
-A popular diversion in the United States, "word find" (or "word search") puzzles ask the player to find each of a given set of words in a square table filled with single letters. A word can read horizontally (left or right), vertically (up or down), or along a 45 degree diagonal (in any of the four directions) formed by consecutively adjacent cells of the table; it may wrap around the table’s boundaries, but it must read in the same direction with no zigzagging. The same cell of the table may be used in different words, but, in a given word, the same cell may be used no more than once. 
+A popular diversion in the United States, "word find" (or "word search") puzzles ask the player to find each of a given set of words in a table filled with single letters. A word can read horizontally (left or right), vertically (up or down), or along a 45 degree diagonal (in any of the four directions) formed by consecutively adjacent cells of the table; it may wrap around the table’s boundaries, but it must read in the same direction with no zigzagging. The same cell of the table may be used in different words, but, in a given word, the same cell may be used no more than once. 
 
 Your program will take in a puzzle and a list of words and return the start and end position of each word in the puzzle if found and an error message if not found.
 
@@ -79,17 +101,13 @@ You will complete the following functions in the `main-sub2.cpp` file:
     Q  I  L  L
     R  D  O  O
     ```
-    word list
+    word
      ```
     OLD
-    ADD
-    DOG
     ```
     output:
     ```
     Word OLD found at (3, 3) -> (0, 1)
-    Word ADD found at (0, 0) -> (0, 2)
-    Word DOG not found
     ```
 4. `bool findWord(const vector<vector<char>> & puzzle, string word, vector<int> &start, vector<int> &end)`
    - Returns true if `word` is found and stores the start location (row, column of the first character) and the end location (row, column of the last character) in the `start` and `end` vectors. 
@@ -100,6 +118,25 @@ The `main()` function will call these functions in the following order:
 2. Call to your `readWords` function ( I have already set up the command line arguments to read in the words file name )
 3. Loop through your `words` vector
   - Each time through, a call to your `findWord` and your `printLocation` function
+
+Example output: 
+```
+A  D  D  T
+Q  I  L  L
+R  D  O  O
+```
+word list
+```
+OLD
+ADD
+DOG
+```
+output:
+```
+Word OLD found at (3, 3) -> (0, 1)
+Word ADD found at (0, 0) -> (0, 2)
+Word DOG not found
+```
 
 ### Compiling and Running Subtask 2
 Compiling: 
