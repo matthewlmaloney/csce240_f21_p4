@@ -87,7 +87,11 @@ The minimum hamming distance for apples is 1 (matching word: apple)
 ### Compiling and Running Subtask 1
 Compiling: 
 ```
+// Windows/ Linux
 g++ main-sub1.cpp -o sub1
+
+// Mac 
+g++ -std=c++2a main-sub1.cpp -o sub1
 ```
 Runnning:
 ```
@@ -196,7 +200,11 @@ Word DOG not found
 ### Compiling and Running Subtask 2
 Compiling: 
 ```
+// Windows/ Linux
 g++ main-sub2.cpp -o sub2
+
+// Mac 
+g++ -std=c++2a main-sub2.cpp -o sub2
 ```
 Runnning:
 ```
