@@ -189,12 +189,16 @@ word list
 OLD
 ADD
 DOG
+DID
+ARM
 ```
 output:
 ```
 Word OLD found at (2, 2) -> (0, 2)
 Word ADD found at (0, 0) -> (0, 2)
 Word DOG not found
+Word DID found at (0, 1) -> (2, 1)
+Word ARM was not found
 ```
 
 ### Compiling and Running Subtask 2
