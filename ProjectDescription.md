@@ -1,4 +1,4 @@
-# CSCE 240 Project 4 (60 pts) Due 11/16 at Midnight
+# CSCE 240 Project 4 (60 pts) Due 11/21 at Midnight
 For this assignment there will be 2 subtasks (30 points each). In each of the subtasks you will complete the task using a `std::vector`. 
 
 ## Subtask 1 - Hamming Distance
