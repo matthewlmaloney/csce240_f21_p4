@@ -3,3 +3,5 @@ ADD
 DOG
 DID
 ARM
+RID
+AIO
