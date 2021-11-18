@@ -129,6 +129,8 @@ You will complete the following functions in the `main-sub2.cpp` file:
     DOG
     DID
     ARM
+    RID
+    AIO
     ```
     - Each string in the file should be pushed to the vector `words` passed into the function. 
 3. `void printPuzzle(const vector<vector<char>> &puzzle)`
@@ -146,6 +148,8 @@ You will complete the following functions in the `main-sub2.cpp` file:
     DOG
     DID
     ARM
+    RID
+    AIO
     ```
 5. `void printLocation(string word, const vector<int> &start, const vector<int> &end, bool found)`
    - Should print out the starting and end location of the `word` only if `found` is true. 
@@ -191,6 +195,8 @@ ADD
 DOG
 DID
 ARM
+RID
+AIO
 ```
 output:
 ```
@@ -199,6 +205,8 @@ Word ADD found at (0, 0) -> (0, 2)
 Word DOG not found
 Word DID found at (0, 1) -> (2, 1)
 Word ARM was not found
+Word RID found at (2, 0) -> (0, 2)
+Word AIO found at (0, 0) -> (2, 2)
 ```
 
 ### Compiling and Running Subtask 2
