@@ -53,7 +53,7 @@ void printData(const vector<string> &data) {
 }
 
 vector<int> findMinHamming(const vector<string> & data, string test) {
-  vector<int> ret;
+   vector<int> ret;
   vector<int> holding;
   int size=0;
   int count=0;
@@ -93,7 +93,7 @@ vector<int> findMinHamming(const vector<string> & data, string test) {
      }
    }
 
-  return ret;
+    return ret;
 }
 
 void printMinDistance(const vector<string> &data, string word,

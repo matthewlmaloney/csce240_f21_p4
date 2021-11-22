@@ -46,18 +46,24 @@ int main(int argc, char **argv) {
 }
 
 void readPuzzle(vector<vector<char>> &puzzle, string filename) {
-    string line;
-    int linecount=0;
-  std::ifstream in;
-  in.open(filename);
-  while (in >> line)
-  {
-    for(int i=0;i<(line.length()-1);i++)
-      {
-        puzzle[linecount][i];
-      }
-      linecount++;
+  vector<char> lineholder;
+  string line;
+  std::ifstream in(filename);
+  if (in.is_open()) {
+    while (getline(in,line))
+    {
+          for(char &c : line)
+            {
+              if (c != ' ')
+                lineholder.push_back(c);
+            }
+          puzzle.push_back(lineholder);
+          lineholder.clear();
+          
+          
+    }
   }
+  in.close();
     return;
 }
 
@@ -86,15 +92,29 @@ void printPuzzle(const vector<vector<char>> &puzzle) {
 }
 
 void printWords(const vector<string> &words) {
+  for(auto word: words)
+  {
+    cout << word << '\n';
+  }
     return;
 }
 
 void printLocation(string word, const vector<int> &start,
                    const vector<int> &end, bool found) {
+    if(found)
+     {
+       cout << "word " << word <<" found at (" << start[0] << ", " << start[1] << ") -> (" << end[0] << ", " << end[1] << ")\n";
+     }
+
+    else
+    {
+      cout << "Word " << word << " not found" << '\n';
+    }
     return;
 }
 
 bool findWord(const vector<vector<char>> & puzzle, string word,
               vector<int> &start, vector<int> &end) {
     return false;
+  
 }
