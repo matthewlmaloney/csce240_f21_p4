@@ -1,7 +1,9 @@
-// Copyright 2021 <Your name here>
+// Copyright 2021 Matthew Maloney
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <string>
+
 
 using std::vector;
 using std::cout;
@@ -32,20 +34,70 @@ int main(int argc, char **argv) {
 }
 
 void readData(vector<string> &data, string filename) {
+  string line;
+  std::ifstream in;
+  in.open(filename);
+  while (in >> line)
+  {
+    data.push_back(line);
+  }
   return;
 }
 
 void printData(const vector<string> &data) {
+  for(int i=0; i<data.size();i++)
+  {
+   cout << data[i] << '\n';
+  }
   return;
 }
 
 vector<int> findMinHamming(const vector<string> & data, string test) {
-  vector<int> ret; 
-  
+  vector<int> ret;
+  vector<int> holding;
+  int size=0;
+  int count=0;
+  int itter=0;
+  for(auto word: data)
+  {
+    count=0;
+     if(test.length()!=word.length())
+     {
+       count=abs(test.length()-word.length());
+       if(test.length()>word.length())
+       {
+         size=word.length()-1;
+       }
+       if(test.length()<word.length())
+       {
+        size=test.length()-1;
+       }
+     }
+
+     for(int i=0;i<size;i++)
+     {
+       if(word[i]!=test[i])
+          {
+        count++;
+          }
+     }
+     holding[itter]=count;
+     itter++;
+  }
+   for(int i=0;i<holding.size();i++)
+   { 
+     if(holding[i]>holding[i+1])
+     {
+     ret.push_back(i+1);
+     ret.push_back(holding[i]);
+     }
+   }
+
   return ret;
 }
 
 void printMinDistance(const vector<string> &data, string word,
                       const vector<int> min) {
+  cout << "The minimum hamming distance for "<< word <<" is "<< min[1] <<" (mathcing word: "<<data[min[0]]<<")";
   return;
 }
